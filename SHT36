@@ -5,8 +5,8 @@ canbus_uuid:  8b84de042966
 sensor_type: temperature_mcu
 sensor_mcu: sht36
 
-[fan]
-pin: sht36:PB10
+#[fan]
+#pin: sht36:PB10
 
 [stepper_x]
 endstop_pin: !sht36:PA0
