@@ -1,5 +1,5 @@
 [mcu sht36]
-canbus_uuid:  *d085135ff4c2*
+canbus_uuid:  8b84de042966
 
 [temperature_sensor FLY-SHT36]
 sensor_type: temperature_mcu
@@ -7,11 +7,6 @@ sensor_mcu: sht36
 
 [fan]
 pin: sht36:PB10
-
-## FAN1
-[fan_generic fan]
-pin: sht36:PB11
-
 
 [stepper_x]
 endstop_pin: !sht36:PA0
@@ -26,29 +21,20 @@ nozzle_diameter: 0.400
 filament_diameter: 1.750
 heater_pin: sht36:PA8
 sensor_pin: sht36:PB0
-sensor_type: ATC Semitec 104GT-2
-pullup_resistor: 2200
+sensor_type: PT1000
+pullup_resistor: 1100
 control: pid
 pid_Kp: 22.2
 pid_Ki: 1.08
 pid_Kd: 114
 min_temp: -50
-max_temp: 350
+max_temp: 300
 
 [tmc2209 extruder]
 uart_pin: sht36:PB5
-run_current: 0.600
+run_current: 0.400
 stealthchop_threshold: 999999
 
 [adxl345]
 cs_pin: sht36:PA4
 spi_bus: spi1
-
-## PT100设置
-[temperature_sensor PT100]
-sensor_type: MAX31865
-sensor_pin: sht36:PA3
-spi_bus: spi1
-min_temp: -50
-max_temp: 350
-rtd_reference_r: 430
