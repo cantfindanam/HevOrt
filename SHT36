@@ -5,8 +5,13 @@ canbus_uuid:  8b84de042966
 sensor_type: temperature_mcu
 sensor_mcu: sht36
 
-#[fan]
-#pin: sht36:PB10
+
+[heater_fan hotend_fan]
+pin: sht36:PB10
+max_power: 1.0
+kick_start_time: 0.5
+heater: extruder
+heater_temp: 50.0
 
 [stepper_x]
 endstop_pin: !sht36:PA0
